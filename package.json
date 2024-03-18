@@ -1,0 +1,23 @@
+{
+	"name": "node-decouverte",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"start": "nodemon server.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Max75020/node.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Max75020/node/issues"
+	},
+	"homepage": "https://github.com/Max75020/node#readme",
+	"dependencies": {
+		"express": "^4.18.3"
+	}
+}
