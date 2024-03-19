@@ -9,7 +9,12 @@ module.exports = (sequelize) => {
 	}
 	Wood.init(
 		{
-			name: DataTypes.STRING,
+			name: {
+				type: DataTypes.STRING,
+				validate: {
+					notEmpty: { msg: "Le nom est requis" },
+				}
+			},
 			type: {
 				type: DataTypes.ENUM('softwood', 'exotic wood', 'noble and hardwoods'),
 				allowNull: false,
