@@ -26,3 +26,21 @@ exports.readByHardness = async (req, res) => {
 		});
 	}
 }
+
+exports.createWood = async (req, res) => {
+	try {
+
+		const pathname = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+		const woodData = {
+			...JSON.parse(req.body.datas),
+			image:pathname
+		}
+
+		const wood = await Wood.create(woodData);
+		res.status(201).json(wood);
+	} catch (error) {
+		res.status(500).json({
+			message: error.message || "Erreur : pas de création de wood",
+		});
+	}
+}
