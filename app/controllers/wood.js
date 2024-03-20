@@ -1,6 +1,6 @@
 const { Wood } = require("../models");
 
-exports.list = async (req, res) => {
+exports.readAll = async (req, res) => {
 	try {
 		const woods = await Wood.findAll();
 		res.status(200).json(woods);
