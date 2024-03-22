@@ -11,7 +11,7 @@ exports.readAll = async (req, res) => {
 				links: generateWoodLinks(wood)
 			}
 		})
-		res.status(200).json({ woods: woodsLinks, links: generateGlobalLinksWoods() });
+		res.status(200).json({ woods: woodsLinks, GlobalLinksWoods: generateGlobalLinksWoods() });
 	} catch (err) {
 		res.status(500).json({
 			message:
@@ -32,7 +32,7 @@ exports.readByHardness = async (req, res) => {
 				links: generateWoodLinks(wood)
 			}
 		})
-		res.status(200).json({ woods: woodsLinks, links: generateGlobalLinksWoods() });
+		res.status(200).json({ woods: woodsLinks, GlobalLinksWoods: generateGlobalLinksWoods() });
 	} catch (err) {
 		res.status(500).json({
 			message:

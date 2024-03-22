@@ -2,6 +2,11 @@ const express = require("express");
 const db = require("./app/models/index.js");
 const router = require("./app/routes/index.js");
 const path = require('path');
+const fs = require('fs')
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yaml')
+const file  = fs.readFileSync('./swagger.yaml', 'utf8')
+const swaggerDocument = YAML.parse(file)
 
 
 db.sequelize
@@ -12,6 +17,7 @@ db.sequelize
 const app = express();
 
 app.use(express.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api", router);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 module.exports = app;
